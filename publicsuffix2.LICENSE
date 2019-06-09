@@ -1,6 +1,6 @@
-Copyright (c) 2019 Renée Burton
-This code is based on nexB Inc. code found at:
-https://www.github.com/nexB/python-publicsuffix2
+Copyright (c) 2019 Renée Burton and nexB Inc.
+This code is a fork of
+http://github.com/nexb/python-publicsuffix2.git
 
 Copyright (c) 2015 nexB Inc.
 This code is based on Tomaž Šolc fork of David Wilson code originally at

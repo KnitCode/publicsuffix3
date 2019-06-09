@@ -49,7 +49,7 @@ class UpdatePslCommand(Command):
         import requests
 
         PSL_URL = 'https://publicsuffix.org/list/public_suffix_list.dat'
-        BASE_DIR = os.path.join(os.path.dirname(__file__), 'src', 'publicsuffix2')
+        BASE_DIR = os.path.join(os.path.dirname(__file__), 'src', 'publicsuffix3')
         PSL_FILE = os.path.join(BASE_DIR, 'public_suffix_list.dat')
         ABOUT_PSL_FILE = os.path.join(BASE_DIR, 'public_suffix_list.ABOUT')
 
@@ -80,15 +80,15 @@ license_text_file: mpl-2.0.LICENSE
 
 
 setup(
-    name='publicsuffix2',
-    version='2.20190328',
+    name='publicsuffix3',
+    version='3.20190609',
     license='MIT and MPL-2.0',
-    description='Get a public suffix for a domain name using the Public Suffix '
-        'List. Forked from and using the same API as the publicsuffix package.',
+    description='Get a public suffix and second level domain for a domain name using the Public Suffix List',
     long_description='%s\n%s' % (read('README.rst'), read('CHANGELOG.rst')),
+    long_description_content_type='text/text-rst',
     author='Renée Burton, nexB Inc., Tomaz Solc and David Wilson',
-    author_email='',
-    url='https://github.com/KnitCode/python-publicsuffix2',
+    author_email='knitcode@github.com',
+    url='https://github.com/knitcode/publicsuffix3',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -109,7 +109,7 @@ setup(
         'Development Status :: 5 - Production/Stable',
     ],
     keywords=[
-        'domain', 'public suffix', 'suffix', 'dns', 'tld',
+        'domain', 'public suffix', 'suffix', 'dns', 'tld', 'sld', 'psl',
     ],
     cmdclass={'update_psl': UpdatePslCommand},
 )

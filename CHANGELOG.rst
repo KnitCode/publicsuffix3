@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+2019-06-09    publicsuffix3 3.20190609
+
+    * created new publicsuffix3 package (pull request to publicsuffix2 stalled)
+    * incorporated test changes from PR on 6/5/19
 
 2019-02-05    publicsuffix2 2.201902051213
 

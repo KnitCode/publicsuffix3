@@ -2,7 +2,7 @@ Public Suffix List module for Python
 ====================================
 
 This module allows you to get the public suffix, as well as the registrable domain,
- of a domain name using the Public Suffix List from http://publicsuffix.org
+of a domain name using the Public Suffix List from http://publicsuffix.org
 
 A public suffix is a domain suffix under which you can register domain
 names. It is sometimes referred to as the extended TLD (eTLD).
@@ -36,13 +36,12 @@ domains that utilize unicode characters.
 The code is MIT-licensed and the publicsuffix data list is MPL-2.0-licensed.
 
 .. image:: https://api.travis-ci.org/nexB/python-publicsuffix2.png?branch=master
-   :target: https://travis-ci.org/nexB/python-publicsuffix2
+   :target: https://travis-ci.org/knitcode/publicsuffix3
    :alt: master branch tests status
 
 .. image:: https://api.travis-ci.org/nexB/python-publicsuffix2.png?branch=develop
-   :target: https://travis-ci.org/nexB/python-publicsuffix2
+   :target: https://travis-ci.org/knitcode/publicsuffix3
    :alt: develop branch tests status
-
 
 Usage
 -----
@@ -107,7 +106,7 @@ To update the bundled suffix list use the provided setup.py command::
 
     python setup.py update_psl
     
-The update list will be saved in `src/publicsuffix2/public_suffix_list.dat`
+The update list will be saved in ``src/publicsuffix2/public_suffix_list.dat``
 and you can build a new wheel with this bundled data.
 
 Alternatively, there is a fetch() function that will fetch the latest version
@@ -180,6 +179,10 @@ All of the methods and functions include the wildcard and strict parameters.
 For convenience, the public method get_sld() is available. This is identical to the method
 get_public_suffix() and is intended to clarify the output for some users.
 
+    >>> from publicsuffix2 import PublicSuffixList
+    >>> psl = PublicSuffixList(idna=True)  # on by default
+    >>> psl.get_sld('www.google.com')
+
 
 Source
 ------
@@ -188,14 +191,15 @@ Get a local copy of the development repository. The development takes
 place in the ``develop`` branch. Stable releases are tagged in the ``master``
 branch::
 
-    git clone https://github.com/nexB/python-publicsuffix2.git
+    git clone https://github.com/knitcode/publicsuffix3.git
 
 
 History
 -------
 This code is forked from NexB's fork of Tomaž Šolc's fork of David Wilson's code.
 
-The original publicsuffix2 code is Copyright (c) 2015 nexB Inc.
+The original publicsuffix2 code is Copyright (c) 2015 nexB Inc. This is found at:
+http://github.com/nexb/python-publicsuffix2.git
 
 David Wilson's code originally at:
 
@@ -218,8 +222,6 @@ License
 
 The code is MIT-licensed. 
 The vendored public suffix list data from Mozilla is under the MPL-2.0.
-
-Copyright (c) 2019 Renée Burton
 
 Copyright (c) 2015 nexB Inc.
 
