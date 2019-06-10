@@ -269,7 +269,7 @@ _PSL = None
 
 def get_sld(domain, psl_file=None, wildcard=True, idna=True, strict=False):
     """
-    Return the private suffix or SLD for a `domain` DNS name string. The original publicsuffix2 library used the method
+    Return the private suffix or SLD for a `domain` DNS name string. The original publicsuffix3 library used the method
     get_public_suffix() for this purpose, but get_private_suffix() is more proper.
     Convenience function that builds and caches a PublicSuffixList object.
 
@@ -308,7 +308,7 @@ def get_tld(domain, psl_file=None, wildcard=True, idna=True, strict=False):
 
 def get_public_suffix(domain, psl_file=None, wildcard=True, idna=True, strict=False):
     """
-    Included for compatibility with the original publicsuffix2 library -- this function returns the private
+    Included for compatibility with the original publicsuffix3 library -- this function returns the private
     suffix or SLD of the domain. To get the public suffix, use get_tld().
     Convenience function that builds and caches a PublicSuffixList object.
 
@@ -332,7 +332,7 @@ def fetch():
     Return a file-like object for the latest public suffix list downloaded from
     publicsuffix.org
     """
-    req = Request(PSL_URL, headers={'User-Agent': 'python-publicsuffix2'})
+    req = Request(PSL_URL, headers={'User-Agent': 'python-publicsuffix3'})
     res = urlopen(req)
     try:
         encoding = res.headers.get_content_charset()

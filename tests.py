@@ -40,7 +40,7 @@ from __future__ import print_function
 import sys
 import unittest
 
-import publicsuffix2 as publicsuffix
+import publicsuffix3 as publicsuffix
 
 if sys.version < '3':
     import codecs

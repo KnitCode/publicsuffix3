@@ -74,18 +74,18 @@ license_text_file: mpl-2.0.LICENSE
         fetched= requests.get(PSL_URL).content
         with open(PSL_FILE, 'wb') as pslout:
             pslout.write(fetched)
-        with open(ABOUT_PSL_FILE, 'wb') as about:
+        with open(ABOUT_PSL_FILE, 'wt') as about:
             about.write(ABOUT_TEMPLATE % glocals)
         print('Saved updated %(PSL_FILE)s and %(ABOUT_PSL_FILE)s' % glocals)
 
 
 setup(
     name='publicsuffix3',
-    version='3.20190609',
+    version='3.20190610',
     license='MIT and MPL-2.0',
     description='Get a public suffix and second level domain for a domain name using the Public Suffix List',
     long_description='%s\n%s' % (read('README.rst'), read('CHANGELOG.rst')),
-    long_description_content_type='text/text-rst',
+    long_description_content_type='text/x-rst',
     author='Renée Burton, nexB Inc., Tomaz Solc and David Wilson',
     author_email='knitcode@github.com',
     url='https://github.com/knitcode/publicsuffix3',
