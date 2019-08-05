@@ -81,7 +81,7 @@ license_text_file: mpl-2.0.LICENSE
 
 setup(
     name='publicsuffix3',
-    version='3.20190610',
+    version='3.20190805',
     license='MIT and MPL-2.0',
     description='Get a public suffix and second level domain for a domain name using the Public Suffix List',
     long_description='%s\n%s' % (read('README.rst'), read('CHANGELOG.rst')),
