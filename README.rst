@@ -173,6 +173,18 @@ You can use it this way::
 Note that the once loaded, the data file is cached and therefore fetched only
 once.
 
+The extracted public suffix list, that is the tlds and their modifiers, is put into
+an instance variable, tlds, which can be accessed as an attribute.::
+
+    >>> psl = PublicSuffixList()
+    >>> psl.tlds[:5]
+    ['ac',
+    'com.ac',
+    'edu.ac',
+    'gov.ac',
+    'net.ac']
+
+
 Changes from publicsuffix2
 --------------------------
 
@@ -183,7 +195,7 @@ wildcards and to require strict adherence to the TLDs included in the list. Last
 some convenience functions for obtaining only the extended TLD (eTLD) rather than the
 registrable domain (SLD). We have maintained the method name, get_public_suffix(), for backward
 compatibility; these method return the registrable (or base, sld) domain, rather than the true
-public suffix. To obtain the public suffix, use get_tld().
+public suffix. To obtain the public suffix of a domain, use get_tld().
 
 
 Source

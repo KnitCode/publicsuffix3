@@ -161,11 +161,15 @@ class PublicSuffixList(object):
         (0, {'ac': 0, 'co': (0, {'blogspot': 0}), 'gv': 0,....})
         where each tuple starts with the negation encoding, and each leaf in the Trie as a dictionary element returns 0.
 
+        It also creates an instance variable, tlds, which simply contains the publicsuffix list, with the modifiers such
+        as wildcards. This can be accessed for post-processing by the application.
+
         :param fp: pointer for the public suffix list
         :param idna: boolean, convert lines to idna-encoded strings
         :return: Trie
         """
         root = [0]
+        tlds = []
 
         for line in fp:
             line = line.strip()
@@ -173,9 +177,10 @@ class PublicSuffixList(object):
                 continue
             if idna:
                 line = line.encode('idna').decode()
+            tlds.append(line)
 
             self._add_rule(root, line.split()[0].lstrip('.'))
-
+        self.tlds = tlds  # a list of eTLDs with their modifiers, e.g., *
         return root
 
     def _lookup_node(self, matches, depth, parent, parts, wildcard):
