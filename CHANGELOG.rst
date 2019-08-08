@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+2019-08-08    publicsuffix3 3.20190808
+
+    * added instance variable, tlds, which is a list of the extracted psl tlds
+
 2019-06-09    publicsuffix3 3.20190609
 
     * created new publicsuffix3 package (pull request to publicsuffix2 stalled)
