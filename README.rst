@@ -98,7 +98,7 @@ an optional argument pointing to a public suffix file. This can either be a file
 path, an iterable of public suffix lines, or a file-like object pointing to an
 opened list::
 
-    >>> from publicsuffix import get_public_suffix
+    >>> from publicsuffix3 import get_public_suffix
     >>> psl_file = 'path to some psl data file'
     >>> get_public_suffix('www.example.com', psl_file)
     'example.com'
@@ -164,8 +164,8 @@ Alternatively, there is a fetch() function that will fetch the latest version
 of a Public Suffix data file from https://publicsuffix.org/list/public_suffix_list.dat
 You can use it this way::
 
-    >>> from publicsuffix import get_public_suffix
-    >>> from publicsuffix import fetch
+    >>> from publicsuffix3 import get_public_suffix
+    >>> from publicsuffix3 import fetch
     >>> psl_file = fetch()
     >>> get_public_suffix('www.example.com', psl_file)
     'example.com'
